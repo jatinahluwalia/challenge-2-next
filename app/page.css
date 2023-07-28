@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+
+  /* Primary Colours */
+
+  --clr-marine-blue: hsl(213, 96%, 18%);
+  --clr-marine-blue-hover: rgba(2, 41, 90, .85);
+  --clr-pruplish-blue: hsl(243, 100%, 62%);
+  --clr-pastel-blue: hsl(228, 100%, 84%);
+  --clr-light-blue: hsl(206, 94%, 87%);
+  --clr-strawberry-blue: hsl(354, 84%, 57%);
+
+  /* Neutral colours */
+
+  --clr-cool-gray: hsl(231, 11%, 63%);
+  --clr-light-gray: hsl(229, 24%, 87%);
+  --clr-mangolia: hsl(217, 100%, 97%);
+  --clr-alabaster: hsl(231, 100%, 99%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* Font size */
+
+  --fs-paragraph: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-mangolia);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.multistep-form {
+  font-family: "Ubuntu";
+  background-color: var(--clr-white);
+  /* width: min(1000px, 100%); */
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+}
+
+.multistep-form__sidebar {
+  width: 275px;
+  height: 550px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.multistep-form__sidebar-img {
+  position: absolute;
+}
+
+.steps {
+  padding: 40px;
+  color: var(--clr-white);
+  font-weight: 700;
+  display: grid;
+  gap: 32px;
+  font-size: calc(var(--fs-paragraph) - 2px);
+}
+
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+}
+
+.step-icon {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-content: center;
+  outline: 1px solid var(--clr-white);
+}
+
+.active-icon {
+  color: var(--clr-marine-blue);
+  background-color: var(--clr-light-blue);
+  outline: none;
+}
+
+.step-info {
+  display: grid;
+  gap: 3px;
+}
+
+.step-number {
+  color: var(--clr-cool-gray);
+  font-weight: 400;
+}
+
+.step-name {
+  letter-spacing: 1px;
+}
+
+.multistep-form__main {
+  margin: 20px 90px;
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.multistep-form__main h1 {
+  /* font-size: 2.25rem; */
+  color: var(--clr-marine-blue);
+  margin-bottom: 0;
+}
+
+.multistep-form__main p {
+  color: var(--clr-cool-gray);
+  margin-block: .7em;
+}
+
+form {
+  margin-top: 32px;
+}
+
+form.step-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+  font-size: 14px;
+  position: relative;
+}
+
+.input-box {
+  display: grid;
+  gap: 5px;
+}
+
+.input-box label {
+  color: var(--clr-marine-blue);
+}
+
+.input-box input {
+  border-radius: 5px;
+  border: none;
+  border: 1px solid var(--clr-light-gray);
+  padding: 16px;
+  color: var(--clr-marine-blue);
+  font-weight: 700;
+}
+
+.label-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-box input:hover {
+  outline: 1px solid var(--clr-marine-blue);
+}
+
+.input-box input::placeholder {
+  font-weight: 700;
+  color: var(--clr-cool-gray)
+}
+
+.btn-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: max-content;
+  color: var(--clr-white);
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.next-step-btn {
+  background-color: var(--clr-marine-blue);
+}
+
+.confirm-btn {
+  background-color: var(--clr-pruplish-blue);
+}
+
+.back-btn {
+  color: var(--clr-cool-gray);
+  background-color: transparent;
+  font-weight: 700;
+  padding-inline: 0;
+}
+
+.next-step-btn:hover {
+  background-color: var(--clr-marine-blue-hover);
+}
+
+.back-btn:hover {
+  color: var(--clr-marine-blue);
+}
+
+.error-text {
+  color: var(--clr-strawberry-blue);
+  font-weight: 700;
+}
+
+.error-input {
+  outline: 1px solid var(--clr-strawberry-blue);
+}
+
+.radio-container {
+  display: flex;
+  gap: 16px;
+}
+
+
+.radio-input-box {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--clr-light-gray);
+  border-radius: 10px;
+  position: relative;
+  display: grid;
+  gap: 45px;
+}
+
+.radio-input-box:has(input:checked) {
+  background-color: var(--clr-alabaster);
+  border: 1px solid var(--clr-marine-blue);
+}
+
+.radio-input-box input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+
+.radio-input-box:hover {
+  border: 1px solid var(--clr-marine-blue);
+}
+
+.radio-box-name {
+  color: var(--clr-marine-blue);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.radio-box-detail {
+  color: var(--clr-cool-gray);
+  font-size: 14px;
+}
+
+.offer {
+  color: var(--clr-marine-blue);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.annual-plan-container {
+  display: flex;
+  margin-top: 16px;
+  justify-content: center;
+  gap: 16px;
+  padding-block: 16px;
+  background-color: var(--clr-alabaster);
+  border-radius: 10px;
+}
+
+.monthly,
+.yearly {
+  font-weight: 500;
+  color: var(--clr-cool-gray);
+}
+
+.checked {
+  color: var(--clr-marine-blue);
+}
+
+.toggle {
+  position: relative;
+  background-color: var(--clr-marine-blue);
+  width: 32px;
+  height: 12px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.toggle input {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+}
+
+.circle {
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: var(--clr-white);
+  border-radius: 50%;
+  transition: 250ms;
+}
+
+.toggle:has(input:checked) .circle {
+  margin-left: 20px;
+}
