@@ -235,9 +235,62 @@ export default function Home() {
             </form>
           </>
         )}
-        {activeIndex === 3(
+        {activeIndex === 3 && (
           <>
-            <h1></h1>
+            <h1>Pick add-ons</h1>
+            <p>Add ons help enhance your gaming experience.</p>
+            <form className="step-3">
+              <div className="checkbox-container">
+                <label className='checkbox-input-box' htmlFor="online-service">
+                  <input type="checkbox" name="addons" id="online-service" />
+                  <Image
+                    src="/assets/images/icon-checkmark.svg"
+                    alt='check'
+                    width={15}
+                    height={15}
+                  />
+                  <div className="checkbox-info">
+                    <div className="checkbox-name">Online Service</div>
+                    <div className="checkbox-detail">Access to multiplayer games</div>
+                  </div>
+                  <div className="checkbox-price">
+                    {planDetails.planDuration === "yearly" ? "+10$/yr" : "+$1/mo"}
+                  </div>
+                </label>
+                <label className='checkbox-input-box' htmlFor="larger-storage">
+                  <input type="checkbox" name="addons" id="larger-storage" />
+                  <Image
+                    src="/assets/images/icon-checkmark.svg"
+                    alt='check'
+                    width={15}
+                    height={15}
+                  />
+                  <div className="checkbox-info">
+                    <div className="checkbox-name">Larger Storage</div>
+                    <div className="checkbox-detail">Extra 1TB of cloud save</div>
+                  </div>
+                  <div className="checkbox-price">
+                    {planDetails.planDuration === "yearly" ? "+20$/yr" : "+$2/mo"}
+                  </div>
+                </label>
+                <label className='checkbox-input-box' htmlFor="customize">
+                  <input type="checkbox" name="addons" id="customize" />
+                  <Image
+                    src="/assets/images/icon-checkmark.svg"
+                    alt='check'
+                    width={15}
+                    height={15}
+                  />
+                  <div className="checkbox-info">
+                    <div className="checkbox-name">Customizable profile</div>
+                    <div className="checkbox-detail">Custom theme on your profile</div>
+                  </div>
+                  <div className="checkbox-price">
+                    {planDetails.planDuration === "yearly" ? "+20$/yr" : "+$2/mo"}
+                  </div>
+                </label>
+              </div>
+            </form>
           </>
         )}
         <div className="btn-container">

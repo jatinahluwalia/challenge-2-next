@@ -44,8 +44,8 @@ body {
 }
 
 .multistep-form__sidebar {
-  width: 275px;
-  height: 550px;
+  width: 300px;
+  height: 600px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -310,4 +310,60 @@ form.step-1 {
 
 .toggle:has(input:checked) .circle {
   margin-left: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkbox-input-box {
+  position: relative;
+  border: 1px solid var(--clr-light-gray);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px
+}
+
+.checkbox-input-box input {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+}
+
+.checkbox-input-box img {
+  padding: 2px;
+  border-radius: 3px;
+  outline: 1px solid var(--clr-light-gray);
+  background-color: var(--clr-white);
+  transition: 250ms;
+}
+
+.checkbox-input-box:has(input:checked) {
+  background-color: var(--clr-alabaster);
+}
+
+.checkbox-input-box:has(input:checked) img {
+  background-color: var(--clr-pruplish-blue);
+  outline: none;
+
+}
+
+.checkbox-name {
+  color: var(--clr-marine-blue);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.checkbox-detail {
+  color: var(--clr-cool-gray);
+}
+
+.checkbox-price {
+  margin-left: auto;
+  color: var(--clr-pruplish-blue);
+  font-weight: 500;
 }
