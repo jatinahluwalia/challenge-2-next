@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import './page.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Step from '@/components/step'
 
 const steps = [
@@ -74,7 +74,8 @@ export default function Home() {
       })
       setPlanDetails({
         ...planDetails,
-        planDuration: "yearly"
+        planDuration: "yearly",
+        price: planDetails.price * 10
       })
     } else {
       setchecked("monthly")
@@ -86,10 +87,19 @@ export default function Home() {
       })
       setPlanDetails({
         ...planDetails,
-        planDuration: "monthly"
+        planDuration: "monthly",
+        price: planDetails.price / 10
       })
     }
   }
+
+  // useEffect(() => {
+  //   setPlanDetails(prev => ({
+  //     ...prev,
+  //     price: price[`${prev.plan}`]
+  //   }))
+  // }, [price])
+
   const handleAddonChange = (e) => {
     if (e.target.checked) {
       setAddonDetails(prev => [...prev, {
@@ -138,7 +148,7 @@ export default function Home() {
     }
 
     if (activeIndex === 3) {
-      setTotal(prev => {
+      setTotal(() => {
         let temp = planDetails.price
         if (!addonDetails.length) return temp
         addonDetails.forEach(addon => {
@@ -271,7 +281,7 @@ export default function Home() {
                   <div className={`monthly ${checked === "monthly" && "checked"}`}>Monthly</div>
                   <label htmlFor="toggle" className='toggle'>
                     <div className="circle" style={checked === "yearly" ? { marginLeft: "20px" } : {}} />
-                    <input type="checkbox" name="planDuration" id="toggle" onChange={handleCheckboxChange} />
+                    <input type="checkbox" name="planDuration" id="toggle" onChange={handleCheckboxChange} checked={checked === "yearly"} />
                   </label>
                   <div className={`yearly ${checked === "yearly" && "checked"}`}>Yearly</div>
                 </div>
