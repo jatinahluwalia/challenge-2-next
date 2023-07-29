@@ -41,6 +41,7 @@ body {
   padding: 16px;
   border-radius: 16px;
   display: flex;
+  margin: auto;
 }
 
 .multistep-form__sidebar {
@@ -488,6 +489,7 @@ form.step-1 {
 
   .multistep-form {
     padding: 0;
+    margin: 0;
     background-color: transparent;
   }
 
@@ -535,6 +537,10 @@ form.step-1 {
     background-color: var(--clr-white);
     border-radius: 10px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .multistep-form__main h1 {
+    font-size: 28px;
   }
 
   .multistep-form__main p {
