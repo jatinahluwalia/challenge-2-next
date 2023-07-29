@@ -308,9 +308,9 @@ form.step-1 {
   transition: 250ms;
 }
 
-.toggle:has(input:checked) .circle {
+/* .toggle:has(input:checked) .circle {
   margin-left: 20px;
-}
+} */
 
 .checkbox-container {
   display: flex;
@@ -349,7 +349,6 @@ form.step-1 {
 .checkbox-input-box:has(input:checked) img {
   background-color: var(--clr-pruplish-blue);
   outline: none;
-
 }
 
 .checkbox-name {
@@ -366,4 +365,93 @@ form.step-1 {
   margin-left: auto;
   color: var(--clr-pruplish-blue);
   font-weight: 500;
+}
+
+.summary-container {
+  background-color: var(--clr-alabaster);
+  padding: 32px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.summary-plan-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-plan-name {
+  color: var(--clr-marine-blue);
+  font-weight: 500;
+}
+
+.change-btn {
+  padding: 0;
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--clr-cool-gray);
+  font-size: 12px;
+  text-decoration-thickness: 1.5px;
+}
+
+.summary-plan-price {
+  color: var(--clr-marine-blue);
+  font-weight: 700;
+}
+
+.addon-container {
+  border-top: 1px solid var(--clr-light-gray);
+  padding-top: 32px;
+  color: var(--clr-cool-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.addon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addon-price {
+  color: var(--clr-marine-blue);
+}
+
+.summary-total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+.summary-total-text {
+  color: var(--clr-cool-gray);
+}
+
+.summary-total {
+  font-size: 24px;
+  color: var(--clr-pruplish-blue);
+  font-weight: 700;
+}
+
+.confirmation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.confirmation-container img {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+  max-width: 500px;
+  line-height: 26px;
+  font-size: 18px;
 }
