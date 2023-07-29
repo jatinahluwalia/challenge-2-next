@@ -215,18 +215,20 @@ form.step-1 {
 }
 
 .radio-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
 
 
 .radio-input-box {
-  width: 100%;
+  /* flex-grow: 1; */
   padding: 16px;
   border: 1px solid var(--clr-light-gray);
   border-radius: 10px;
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 45px;
 }
 
@@ -454,4 +456,129 @@ form.step-1 {
   max-width: 500px;
   line-height: 26px;
   font-size: 18px;
+}
+
+
+/* Mobile */
+
+.multistep-form__sidebar-img-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  body {
+    display: block;
+  }
+
+  .multistep-form {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .multistep-form {
+    flex-direction: column;
+  }
+
+  .multistep-form__sidebar {
+    width: 100%;
+    height: 200px;
+  }
+
+  .multistep-form__sidebar-img-mobile {
+    display: inline-block;
+    object-fit: cover;
+  }
+
+  .multistep-form__sidebar-img {
+    display: none;
+    position: static;
+  }
+
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .step-info {
+    display: none;
+  }
+
+  .step-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .multistep-form__main {
+    margin: 0;
+    margin-top: -85px;
+    margin-inline: 20px;
+    padding: 24px 32px 32px 32px;
+    min-width: fit-content;
+    z-index: 2;
+    background-color: var(--clr-white);
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .multistep-form__main p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .btn-container {
+    position: fixed;
+    inset: auto 0 0 0;
+    padding: 20px;
+    background-color: var(--clr-white);
+    justify-content: start;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn {
+    border-radius: 4px;
+  }
+
+  .next-step-btn {
+    margin-left: auto;
+  }
+
+  * {
+    font-size: 20px;
+  }
+
+  .radio-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .radio-input-box {
+    flex-direction: row;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .radio-input-box img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .radio-box-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .radio-box-info * {
+    margin: 0;
+  }
+
+  .radio-box-detail {
+    font-size: 20px;
+  }
+
+  .confirmation-container {
+    padding-block: 75px;
+  }
 }

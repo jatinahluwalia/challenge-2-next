@@ -165,6 +165,13 @@ export default function Home() {
           className='multistep-form__sidebar-img'
           layout='fill'
         />
+        <Image
+          src={"/assets/images/bg-sidebar-mobile.svg"}
+          about='haha'
+          alt='nothing'
+          className='multistep-form__sidebar-img-mobile'
+          layout='fill'
+        />
         <div className="multistep-form__sidebar">
           <div className="steps">
 
